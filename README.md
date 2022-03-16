@@ -28,3 +28,11 @@ public class Application {
     }
 }
 ```
+
+# Параметры @SpringBootApplication
+* exclude (Class<...>[]) - исключает заданный список классов из автоматической конфигурации;
+* excludeNames (String[]) - исключает список классов, заданных именами, из автоматической конфигурации;
+* scanBasePackageClasses(Class<...>[]) - список классов, которые должны сканироваться @ComponentScan (типобезопасная альтернатива scanBasePackages);
+* scanBasePackages(String[]) - список имён пакетов, которые должны сканироваться @ComponentScan;
+* nameGenerator(Class<... extends BeanNameGenerator>) - класс, наследуемый от BeanNameGenerator, который будет использоваться для именования обнаруженных компонентов в Spring Container;
+* proxyBeanMethods(bool) - указывает, следует ли проксировать @Bean-методы, чтобы обеспечить поведение жизненного цикла компонента, например, чтобы вернуть общие экземпляры singleton-компонента даже в случае прямого вызова метода в пользовательском коде.
