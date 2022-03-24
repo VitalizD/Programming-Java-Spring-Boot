@@ -23,4 +23,4 @@
 
 ### Ремарка
 Для профиля `prod` значение переменной окружения не задано, следовательно, в конфигурационном файле `application-prod.properties` параметр `some.test.environment-variable` будет содержать значение по умолчанию `default`:
-![alt text](screenshots/environment-variables.png "Переменные окружения")
+    ![alt text](screenshots/environment-variables.png "Переменные окружения")
