@@ -9,11 +9,13 @@ import org.springframework.transaction.event.TransactionalEventListener;
 public class TransactionEventListener {
     @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
     public void listenMessageEventAfterCommit(TransactionEvent event) {
-        System.out.println("Transactional event (after commit) has been processed: " + event.hashCode());
+        System.out.println("Transactional event (after commit) has been processed: " + event.hashCode() +
+                ". Thread: " + Thread.currentThread().getName());
     }
 
     @TransactionalEventListener(phase = TransactionPhase.AFTER_ROLLBACK)
     public void listenMessageEventAfterRollback(TransactionEvent event) {
-        System.out.println("Transactional event (after rollback) has been processed: " + event.hashCode());
+        System.out.println("Transactional event (after rollback) has been processed: " + event.hashCode() +
+                ". Thread: " + Thread.currentThread().getName());
     }
 }

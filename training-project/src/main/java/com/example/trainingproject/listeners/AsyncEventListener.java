@@ -10,6 +10,7 @@ public class AsyncEventListener {
     @Async
     @EventListener
     public void listenAsyncEvent(AsyncEvent event) {
-        System.out.println("Async event has been processed: " + event.hashCode());
+        System.out.println("Async event has been processed: " + event.hashCode() +
+                ". Thread: " + Thread.currentThread().getName());
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 public class SyncEventListener {
     @EventListener
     public void listenMessageEvent(SyncEvent event) {
-        System.out.println("Sync event has been processed: " + event.hashCode());
+        System.out.println("Sync event has been processed: " + event.hashCode() +
+                ". Thread: " + Thread.currentThread().getName());
     }
 }

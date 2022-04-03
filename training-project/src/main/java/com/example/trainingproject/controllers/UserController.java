@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 @Component
-public class EventController {
+public class UserController {
     private ApplicationEventPublisher publisher;
 
-    public EventController(ApplicationEventPublisher publisher) {
+    public UserController(ApplicationEventPublisher publisher) {
         this.publisher = publisher;
     }
 
