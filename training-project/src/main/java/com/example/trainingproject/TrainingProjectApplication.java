@@ -1,6 +1,6 @@
 package com.example.trainingproject;
 
-import com.example.trainingproject.controllers.UserController;
+import com.example.trainingproject.publishers.EventPublisher;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -8,9 +8,9 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @EnableAsync
 @SpringBootApplication
 public class TrainingProjectApplication {
-    private static UserController controller;
+    private static EventPublisher controller;
 
-    public TrainingProjectApplication(UserController controller) {
+    public TrainingProjectApplication(EventPublisher controller) {
         TrainingProjectApplication.controller = controller;
     }
 

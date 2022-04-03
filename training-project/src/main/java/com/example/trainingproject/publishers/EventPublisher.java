@@ -1,17 +1,19 @@
-package com.example.trainingproject.controllers;
+package com.example.trainingproject.publishers;
 
 import com.example.trainingproject.events.AsyncEvent;
 import com.example.trainingproject.events.SyncEvent;
 import com.example.trainingproject.events.TransactionEvent;
+import org.springframework.boot.context.properties.ConstructorBinding;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
 @Component
-public class UserController {
+@ConstructorBinding
+public class EventPublisher {
     private ApplicationEventPublisher publisher;
 
-    public UserController(ApplicationEventPublisher publisher) {
+    public EventPublisher(ApplicationEventPublisher publisher) {
         this.publisher = publisher;
     }
 
