@@ -1,9 +1,8 @@
-package com.example.demo.controllers;
+package com.example.demo.controller;
 
 import com.example.demo.dto.ToDoIOFormat;
 import com.example.demo.service.ToDoListService;
 import org.springframework.boot.context.properties.ConstructorBinding;
-import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,10 +20,7 @@ public class ToDoListController {
     }
 
     @PostMapping("/new/checklist")
-    public String add(@RequestBody @Valid ToDoIOFormat toDoInput, BindingResult bindingResult) {
-        if (bindingResult.hasFieldErrors())
-            return "Error";
-
+    public String add(@RequestBody @Valid ToDoIOFormat toDoInput) {
         toDoListService.saveChecklist(toDoInput);
         return "Saved";
     }
