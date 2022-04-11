@@ -1,12 +1,13 @@
-package com.example.aop.exception;
+package com.example.aop.handler;
 
+import com.example.aop.exception.MaximumRequestsCountException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class MyControllerAdvice {
+public class MaximumRequestsCountExceptionHandler {
     @ExceptionHandler(MaximumRequestsCountException.class)
-    public String processMaximumRequestsCountException(MaximumRequestsCountException exception) {
+    public String handleMaximumRequestsCountException(MaximumRequestsCountException exception) {
         return "Error: " + exception.getMessage();
     }
 }
