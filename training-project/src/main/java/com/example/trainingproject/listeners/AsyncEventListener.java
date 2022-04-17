@@ -9,7 +9,8 @@ import org.springframework.stereotype.Service;
 public class AsyncEventListener {
     @Async
     @EventListener
-    public void listenAsyncEvent(AsyncEvent event) {
+    public void listenAsyncEvent(AsyncEvent event) throws InterruptedException {
+        Thread.sleep(5000);
         System.out.println("Async event has been processed: " + event.hashCode() +
                 ". Thread: " + Thread.currentThread().getName());
     }
