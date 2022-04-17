@@ -12,16 +12,20 @@ import javax.persistence.*;
 public class Task {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "task_num")
     private Integer taskNum;
 
-    @Column(name = "list_num")
-    private int listNum;
+//    @Column(name = "list_num")
+//    private int listNum;
 
     @Column(name = "description")
     private String description;
 
-    public Task(Integer listNum, String description) {
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "list_num")
+    private Checklist checklist;
+
+    public Task(String description) {
         this.description = description;
-        this.listNum = listNum;
     }
 }

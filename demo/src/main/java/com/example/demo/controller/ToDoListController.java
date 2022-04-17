@@ -7,7 +7,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.ArrayList;
+import java.util.List;
 
 @Validated
 @RestController
@@ -27,12 +27,12 @@ public class ToDoListController {
 
     @PostMapping("/delete")
     public String delete(@RequestBody String checklistName) {
-        toDoListService.deleteChecklistByName(checklistName);
+        toDoListService.deleteChecklist(checklistName);
         return "Deleted";
     }
 
     @GetMapping("/find/all")
-    public ArrayList<ToDoIOFormat> getAll() {
-        return toDoListService.getAllChecklistsWithAllTasks();
+    public List<ToDoIOFormat> getAll() {
+        return toDoListService.findAll();
     }
 }

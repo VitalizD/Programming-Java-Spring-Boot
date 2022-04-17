@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -18,5 +18,5 @@ public class ToDoIOFormat {
     private String name;
 
     @NotEmpty(message = "Task description shouldn't be empty")
-    private ArrayList<@Valid String> events;
+    private List<@Valid String> events;
 }
